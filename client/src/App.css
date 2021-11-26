@@ -1,0 +1,7 @@
+:root {
+    --app-blue: rgb(0, 82, 235);
+    --app-gray: rgb(83, 83, 83);
+}
+.pointer {
+    cursor: pointer;
+}

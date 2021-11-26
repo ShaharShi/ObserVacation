@@ -1,0 +1,22 @@
+.container {
+    overflow: hidden;
+}
+
+.likeBtn {
+    transition: all .2s;
+}
+.likeBtn:hover {
+    color: var(--app-blue);
+}
+.like {
+    color:  var(--app-blue);
+}
+.like:hover {
+    filter: brightness(120%);
+}
+.likeOff {
+    color:  var(--app-gray);
+}
+.likeOff:hover {
+    color:  var(--app-gray);
+}
