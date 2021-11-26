@@ -18,8 +18,6 @@ const app = express();
 const server = http.createServer(app);
 const io = new socketIo.Server(server);
 
-app.use(express.static(path.join(__dirname, '../build')));
-
 app.use(cors());
 app.use(express.json());
 app.use(expressJwt({secret: JWT_SECRET}).unless({path: ['/api/auth/login', '/api/auth/signup']}));
@@ -30,10 +28,6 @@ app.use('/api/vacations', vacationsRouter);
 app.use((err: any, req: any, res: any, next: any) =>  {
     if (err.name === 'UnauthorizedError') res.status(401).send('invalid token...')
 })
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'));
-});
 
 server.listen(PORT, () => console.log(`Server is up at ${PORT}`)); 
 
